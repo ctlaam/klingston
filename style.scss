@@ -1,0 +1,129 @@
+html {
+  font-size: 62.5%;
+}
+p {
+  color: red;
+}
+
+#header {
+  height: 6rem;
+  .logo img {
+    height: 60px;
+    width: 15rem;
+  }
+  .navbar-collapse {
+    background-color: #fff;
+    a.nav-link.h3:hover {
+      color: #dd0000 !important;
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .navbar-collapse {
+    position: absolute;
+    bottom: -12rem;
+    width: calc(100% + 15rem);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: rgb(255, 255, 255);
+    right: -15px;
+    border-radius: 5px;
+  }
+}
+
+.main {
+  background-color: #f2f5f9;
+  min-height: 60rem;
+  padding: 5rem 0;
+  .search-form {
+    input[type="text"] {
+      font-size: 1.6rem;
+      padding: 5px 10px;
+    }
+  }
+  .list-songs {
+    .title {
+      padding-left: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      font-size: 21px;
+      font-weight: bold;
+    }
+    .songs {
+      .home-section {
+        .header .title {
+          display: flex;
+          align-items: center;
+          line-height: 30px;
+          color: #fff;
+          font-size: 18px;
+          font-weight: normal;
+          position: relative;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          margin: 0;
+          padding-left: 10px;
+          background: #24cd77;
+          border-radius: 5px;
+          a {
+            color: #fff;
+            font-weight: 500;
+          }
+        }
+        .itemsong {
+          overflow-y: hidden;
+          border-bottom: solid 1px #eee;
+          height: 55px;
+          margin: 5px 0;
+          display: block;
+          a {
+            color: #333;
+            text-rendering: optimizeLegibility;
+            .images {
+              width: 45px;
+              height: 45px;
+            }
+            .itemsong .metas {
+              padding: 5px;
+              span.artists {
+                line-height: 25px;
+                font-size: 11px;
+                color: #555;
+              }
+            }
+          }
+        }
+      }
+      .list-group {
+        padding-left: 15px;
+        margin: 0;
+        margin-bottom: 20px;
+        .list-group-item:first-child {
+          border-top-right-radius: 4px;
+          border-top-left-radius: 4px;
+        }
+      }
+      .category-list li {
+        border: 0;
+        border: none !important;
+        a{
+            color: #03c !important;
+            text-decoration: none;
+        }
+      }
+      .list-group-item {
+        background-color: transparent;
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+      }
+      .category-list h3 {
+        margin: 0;
+        padding: 0;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

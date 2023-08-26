@@ -1,0 +1,124 @@
+html {
+  font-size: 62.5%;
+}
+
+p {
+  color: red;
+}
+
+#header {
+  height: 6rem;
+}
+#header .logo img {
+  height: 60px;
+  width: 15rem;
+}
+#header .navbar-collapse {
+  background-color: #fff;
+}
+#header .navbar-collapse a.nav-link.h3:hover {
+  color: #dd0000 !important;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar-collapse {
+    position: absolute;
+    bottom: -12rem;
+    width: calc(100% + 15rem);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: rgb(255, 255, 255);
+    right: -15px;
+    border-radius: 5px;
+  }
+}
+.main {
+  background-color: #f2f5f9;
+  min-height: 60rem;
+  padding: 5rem 0;
+}
+.main .search-form input[type=text] {
+  font-size: 1.6rem;
+  padding: 5px 10px;
+}
+.main .list-songs .title {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 21px;
+  font-weight: bold;
+}
+.main .list-songs .songs .home-section .header .title {
+  display: flex;
+  align-items: center;
+  line-height: 30px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: normal;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+  padding-left: 10px;
+  background: #24cd77;
+  border-radius: 5px;
+}
+.main .list-songs .songs .home-section .header .title a {
+  color: #fff;
+  font-weight: 500;
+}
+.main .list-songs .songs .home-section .itemsong {
+  overflow-y: hidden;
+  border-bottom: solid 1px #eee;
+  height: 55px;
+  margin: 5px 0;
+  display: block;
+}
+.main .list-songs .songs .home-section .itemsong a {
+  color: #333;
+  text-rendering: optimizeLegibility;
+}
+.main .list-songs .songs .home-section .itemsong a .images {
+  width: 45px;
+  height: 45px;
+}
+.main .list-songs .songs .home-section .itemsong a .itemsong .metas {
+  padding: 5px;
+}
+.main .list-songs .songs .home-section .itemsong a .itemsong .metas span.artists {
+  line-height: 25px;
+  font-size: 11px;
+  color: #555;
+}
+.main .list-songs .songs .list-group {
+  padding-left: 15px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.main .list-songs .songs .list-group .list-group-item:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.main .list-songs .songs .category-list li {
+  border: 0;
+  border: none !important;
+}
+.main .list-songs .songs .category-list li a {
+  color: #03c !important;
+  text-decoration: none;
+}
+.main .list-songs .songs .list-group-item {
+  background-color: transparent;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+.main .list-songs .songs .category-list h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+}
+
+/*# sourceMappingURL=custom-style.css.map */

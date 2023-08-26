@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -11,24 +12,26 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'klingston' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'klingston' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'klingston' ), 'klingston', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
+<footer id="colophon" class="site-footer">
+	<div class="site-info mt-3">
+		<div class="cfooter">
+			<div class="wrap">
+				<div class="content-wrap">
+					<div class="nctcorp_logo text-center"><a href="https://klingeltone.mobi" style="font-size:18px" alt=""><strong>Copyright 2015 by klingeltone.mobi</strong></a></div>
+					<div class="clearfix">
+						<ul>
+							<a href="" rel="nofollow" title=""></a><a href="" rel="nofollow" title=""></a><a href="" rel="nofollow" title=""></a><a href="" rel="nofollow" title=""></a>
+						</ul>
+						</>
+					</div>
+				</div>
+			</div>
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>
