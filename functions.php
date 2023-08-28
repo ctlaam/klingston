@@ -189,6 +189,12 @@ function add_bootstrap_assets()
 }
 
 add_action('wp_enqueue_scripts', 'add_bootstrap_assets');
+function enqueue_custom_js()
+{
+	// Đăng ký và thêm tập tin JavaScript vào hàng đợi
+	wp_enqueue_script('html5-player', get_template_directory_uri() . '/assets/js/html5-player.0.1.min.js', array(), '0.1', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_js');
 
 
 function add_custom_styles()
@@ -214,3 +220,15 @@ function html5_search_form($form)
 	return $form;
 }
 add_filter('get_search_form', 'html5_search_form');
+
+
+function increase_post_views() {
+    if (is_single()) {
+        $post_id = get_the_ID();
+        $current_views = get_post_meta($post_id, 'view', true);
+        $new_views = $current_views + 1;
+        update_post_meta($post_id, 'view', $new_views);
+    }
+}
+
+add_action('wp', 'increase_post_views');
