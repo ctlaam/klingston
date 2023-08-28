@@ -37,7 +37,6 @@ get_header();
 					<div class="row mb-5">
 						<div class="col-12 col-lg-4">
 							<div class="home-section">
-								<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 								<div class="header">
 									<h2 class="title">
 										<svg class="mr-2" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +48,8 @@ get_header();
 										</svg> <a href="/neue-klingeltone" class="color">Neue Klingeltöne</a>
 									</h2>
 								</div>
-
+								
+								<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 								<?php
 								$args = array(
 									'post_type' => 'post', // Lấy bài viết
@@ -80,7 +80,7 @@ get_header();
 									endwhile;
 									wp_reset_postdata(); // Đặt lại dữ liệu bài viết
 								else :
-									echo 'Không có bài viết.';
+									echo '<h3 class="ml-4 mt-4">Keine Beiträge.</h3>.';
 								endif;
 								?>
 
@@ -129,7 +129,7 @@ get_header();
 									endwhile;
 									wp_reset_postdata(); // Đặt lại dữ liệu bài viết
 								else :
-									echo 'Không có bài viết.';
+									echo '<h3 class="ml-4 mt-4">Keine Beiträge.</h3>.';
 								endif;
 								?>
 							</div>
@@ -177,7 +177,7 @@ get_header();
 									endwhile;
 									wp_reset_postdata(); // Đặt lại dữ liệu bài viết
 								else :
-									echo 'Không có bài viết.';
+									echo '<h3 class="ml-4 mt-4">Keine Beiträge.</h3>.';
 								endif;
 								?>
 							</div>
@@ -231,19 +231,19 @@ get_header();
 						</div>
 						<ul class="list-group category-list col-12">
 							<div class="row pl-5 pr-5">
-								<li class="list-group-item col-md-3 col-sm-4 col-6 icon-list">
-									<h3><a href="https://klingeltone.mobi/klingeltone-anders" title="Anders"><i class="fa-regular fa-bell"></i> Anders</a></h3>
-								</li>
-								<li class="list-group-item col-md-3 col-sm-4 col-6 icon-list">
-									<h3><a href="https://klingeltone.mobi/klingeltone-anders" title="Anders"><i class="fa-regular fa-bell"></i> Anders</a></h3>
-								</li>
-								<li class="list-group-item col-md-3 col-sm-4 col-6 icon-list">
-									<h3><a href="https://klingeltone.mobi/klingeltone-anders" title="Anders"><i class="fa-regular fa-bell"></i> Anders</a></h3>
-								</li>
-								<li class="list-group-item col-md-3 col-sm-4 col-6 icon-list">
-									<h3><a href="https://klingeltone.mobi/klingeltone-anders" title="Anders"><i class="fa-regular fa-bell"></i> Anders</a></h3>
-								</li>
+								<?php
+								$categories = get_categories();
 
+								foreach ($categories as $category) {
+								?>
+									<li class="list-group-item col-md-3 col-sm-4 col-6 icon-list">
+										<h3><a href="<?php echo esc_url(get_category_link($category->term_id)); ?>" title="<?php echo esc_attr($category->name); ?>">
+												<i class="fa-regular fa-bell"></i> <?php echo esc_html($category->name); ?>
+											</a></h3>
+									</li>
+								<?php
+								}
+								?>
 							</div>
 						</ul>
 					</div>

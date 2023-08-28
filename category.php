@@ -1,7 +1,5 @@
 <?php
-/*
-Template Name: beste page
-*/
+
 get_header();
 ?>
 
@@ -20,7 +18,7 @@ get_header();
                             <g id="SVGRepo_iconCarrier">
                                 <path fill="#000000" d="m102 22 2.523-5.444A6 6 0 0 0 96 22h6Zm49.868 63.65a6 6 0 1 0 8.264 8.7l-8.264-8.7ZM96 22v112h12V22H96Zm3.477 5.444c20.118 9.323 37.8 21.15 47.911 32.54 5.078 5.72 7.786 10.816 8.452 14.992.599 3.753-.349 7.232-3.972 10.674l8.264 8.7c6.377-6.058 8.804-13.454 7.559-21.264-1.178-7.386-5.532-14.54-11.329-21.07-11.639-13.11-30.957-25.783-51.839-35.46l-5.046 10.888ZM96 134c0 16.569-13.431 30-30 30v12c23.196 0 42-18.804 42-42H96Zm-30 30c-16.569 0-30-13.431-30-30H24c0 23.196 18.804 42 42 42v-12Zm-30-30c0-16.569 13.431-30 30-30V92c-23.196 0-42 18.804-42 42h12Zm30-30c16.569 0 30 13.431 30 30h12c0-23.196-18.804-42-42-42v12Z"></path>
                             </g>
-                        </svg>Kostenlose Klingeltöne Herunterladen
+                        </svg>Klingeltone Herunterladen <?php single_cat_title(); ?> Kostenlose
                     </div>
                     <div class="row">
                         <div class="main-song col-lg-8 col-12 ">
@@ -33,7 +31,7 @@ get_header();
                                             <g id="SVGRepo_iconCarrier">
                                                 <path d="M9 19C9 20.1046 7.65685 21 6 21C4.34315 21 3 20.1046 3 19C3 17.8954 4.34315 17 6 17C7.65685 17 9 17.8954 9 19ZM9 19V5L21 3V17M21 17C21 18.1046 19.6569 19 18 19C16.3431 19 15 18.1046 15 17C15 15.8954 16.3431 15 18 15C19.6569 15 21 15.8954 21 17ZM9 9L21 7" stroke="#ffffff" stroke-width="1.7759999999999998" stroke-linecap="round" stroke-linejoin="round"></path>
                                             </g>
-                                        </svg> <a href="/beste" class="color">Beste Klingeltöne</a>
+                                        </svg> <a href="/top-page" class="color">Klingeltone <?php single_cat_title(); ?> Herunterladen</a>
                                     </h2>
                                 </div>
                             </div>
@@ -42,8 +40,8 @@ get_header();
                                 <?php
                                 $args = array(
                                     'post_type' => 'post', // Lấy bài viết
+                                    'category_name' => single_cat_title('', false),
                                     'posts_per_page' => 2, // Số bài viết hiển thị (2 bài viết)
-                                    'author_name' => 'admin1', // Tên tác giả là "admin1"
                                     'orderby' => 'date', // Sắp xếp theo thời gian ra mắt
                                     'order' => 'DESC', // Sắp xếp giảm dần (mới nhất lên đầu)
                                     'paged' => $paged, // Trang hiện tại
@@ -77,8 +75,8 @@ get_header();
                                     <?php     // Hiển thị phân trang
                                     $args = array(
                                         'post_type' => 'post', // Lấy bài viết
+                                        'category_name' => single_cat_title('', false),
                                         'posts_per_page' => 2, // Số bài viết hiển thị (2 bài viết)
-                                        'author_name' => 'admin1', // Tên tác giả là "admin1"
                                         'orderby' => 'date', // Sắp xếp theo thời gian ra mắt
                                         'order' => 'DESC', // Sắp xếp giảm dần (mới nhất lên đầu)
                                         'paged' => $paged, // Trang hiện tại

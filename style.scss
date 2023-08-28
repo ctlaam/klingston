@@ -186,17 +186,17 @@ ul#myTab {
     border-radius: 5px;
   }
 }
-
+.search-form {
+  input[type="text"] {
+    font-size: 1.6rem;
+    padding: 5px 10px;
+  }
+}
 .main {
   background-color: #f2f5f9;
   min-height: 60rem;
   padding: 5rem 0;
-  .search-form {
-    input[type="text"] {
-      font-size: 1.6rem;
-      padding: 5px 10px;
-    }
-  }
+
   .list-songs {
     .title {
       padding-left: 10px;

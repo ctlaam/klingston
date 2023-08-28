@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: neue page
+Template Name: top page
 */
 get_header();
 ?>
@@ -33,86 +33,74 @@ get_header();
                                             <g id="SVGRepo_iconCarrier">
                                                 <path d="M9 19C9 20.1046 7.65685 21 6 21C4.34315 21 3 20.1046 3 19C3 17.8954 4.34315 17 6 17C7.65685 17 9 17.8954 9 19ZM9 19V5L21 3V17M21 17C21 18.1046 19.6569 19 18 19C16.3431 19 15 18.1046 15 17C15 15.8954 16.3431 15 18 15C19.6569 15 21 15.8954 21 17ZM9 9L21 7" stroke="#ffffff" stroke-width="1.7759999999999998" stroke-linecap="round" stroke-linejoin="round"></path>
                                             </g>
-                                        </svg> <a href="/neue-klingeltone" class="color">Top Klingeltöne</a>
+                                        </svg> <a href="/top-page" class="color">Top Klingeltöne</a>
                                     </h2>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-12 col-lg-6">
-                                    <div class="itemsong">
-                                        <!-- Player -->
-                                        <a class="d-flex align-items-center" href="https://klingeltone.mobi/klingeltone/classic-phone.html" title="Classic Phone">
-                                            <div id="images_17334" class="images mr-2" alt="Classic Phone">
-                                                <img src="https://klingeltone.mobi/wp-content/themes/klingeltone/assets/img/Music.png" alt="Classic Phone" title="Classic Phone">
-                                            </div>
-                                            <div class="metas audio-metas">
-                                                <h3 class="audio-titles">Classic Phone</h3>
-                                                <span class="artists"><i class="fa fa-eye" aria-hidden="true"></i> 256</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="itemsong">
-                                        <!-- Player -->
-                                        <a class="d-flex align-items-center" href="https://klingeltone.mobi/klingeltone/classic-phone.html" title="Classic Phone">
-                                            <div id="images_17334" class="images mr-2" alt="Classic Phone">
-                                                <img src="https://klingeltone.mobi/wp-content/themes/klingeltone/assets/img/Music.png" alt="Classic Phone" title="Classic Phone">
-                                            </div>
-                                            <div class="metas audio-metas">
-                                                <h3 class="audio-titles">Classic Phone</h3>
-                                                <span class="artists"><i class="fa fa-eye" aria-hidden="true"></i> 256</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="itemsong">
-                                        <!-- Player -->
-                                        <a class="d-flex align-items-center" href="https://klingeltone.mobi/klingeltone/classic-phone.html" title="Classic Phone">
-                                            <div id="images_17334" class="images mr-2" alt="Classic Phone">
-                                                <img src="https://klingeltone.mobi/wp-content/themes/klingeltone/assets/img/Music.png" alt="Classic Phone" title="Classic Phone">
-                                            </div>
-                                            <div class="metas audio-metas">
-                                                <h3 class="audio-titles">Classic Phone</h3>
-                                                <span class="artists"><i class="fa fa-eye" aria-hidden="true"></i> 256</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <div class="itemsong">
-                                        <!-- Player -->
-                                        <a class="d-flex align-items-center" href="https://klingeltone.mobi/klingeltone/classic-phone.html" title="Classic Phone">
-                                            <div id="images_17334" class="images mr-2" alt="Classic Phone">
-                                                <img src="https://klingeltone.mobi/wp-content/themes/klingeltone/assets/img/Music.png" alt="Classic Phone" title="Classic Phone">
-                                            </div>
-                                            <div class="metas audio-metas">
-                                                <h3 class="audio-titles">Classic Phone</h3>
-                                                <span class="artists"><i class="fa fa-eye" aria-hidden="true"></i> 256</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="itemsong">
-                                        <!-- Player -->
-                                        <a class="d-flex align-items-center" href="https://klingeltone.mobi/klingeltone/classic-phone.html" title="Classic Phone">
-                                            <div id="images_17334" class="images mr-2" alt="Classic Phone">
-                                                <img src="https://klingeltone.mobi/wp-content/themes/klingeltone/assets/img/Music.png" alt="Classic Phone" title="Classic Phone">
-                                            </div>
-                                            <div class="metas audio-metas">
-                                                <h3 class="audio-titles">Classic Phone</h3>
-                                                <span class="artists"><i class="fa fa-eye" aria-hidden="true"></i> 256</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="itemsong">
-                                        <!-- Player -->
-                                        <a class="d-flex align-items-center" href="https://klingeltone.mobi/klingeltone/classic-phone.html" title="Classic Phone">
-                                            <div id="images_17334" class="images mr-2" alt="Classic Phone">
-                                                <img src="https://klingeltone.mobi/wp-content/themes/klingeltone/assets/img/Music.png" alt="Classic Phone" title="Classic Phone">
-                                            </div>
-                                            <div class="metas audio-metas">
-                                                <h3 class="audio-titles">Classic Phone</h3>
-                                                <span class="artists"><i class="fa fa-eye" aria-hidden="true"></i> 256</span>
-                                            </div>
-                                        </a>
-                                    </div>
+                                <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
+                                <?php
+                                $args = array(
+                                    'post_type' => 'post', // Lấy bài viết
+                                    'posts_per_page' => 2, // Số bài viết hiển thị (2 bài viết)
+                                    'orderby' => 'date', // Sắp xếp theo thời gian ra mắt
+                                    'order' => 'DESC', // Sắp xếp giảm dần (mới nhất lên đầu)
+                                    'paged' => $paged, // Trang hiện tại
+
+                                );
+
+                                $query = new WP_Query($args);
+                                if ($query->have_posts()) :
+                                    while ($query->have_posts()) : $query->the_post();
+                                ?>
+                                        <div class="itemsong col-12 col-md-6">
+                                            <a class="d-flex align-items-center" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                                <div id="images_17334" class="images mr-2" alt="<?php the_title(); ?>">
+                                                    <img src="https://klingeltone.mobi/wp-content/themes/klingeltone/assets/img/Music.png" alt="Classic Phone" title="Classic Phone">
+                                                </div>
+                                                <div class="metas audio-metas">
+                                                    <h3 class="audio-titles"><?php the_title(); ?></h3>
+                                                    <span style="font-size: 11px;" class="artists"><i class="fa fa-eye" aria-hidden="true"></i> <?php echo get_post_meta(get_the_ID(), 'view', true); ?></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                <?php
+                                    endwhile;
+                                    wp_reset_postdata(); // Đặt lại dữ liệu bài viết
+                                else :
+                                    echo '<h3 class="ml-4 mt-4">Keine Beiträge.</h3>.';
+                                endif;
+
+                                ?>
+                                <div class="col-12">
+                                    <?php     // Hiển thị phân trang
+                                    $args = array(
+                                        'post_type' => 'post', // Lấy bài viết
+                                        'posts_per_page' => 2, // Số bài viết hiển thị (2 bài viết)
+                                        'orderby' => 'date', // Sắp xếp theo thời gian ra mắt
+                                        'order' => 'DESC', // Sắp xếp giảm dần (mới nhất lên đầu)
+                                        'paged' => $paged, // Trang hiện tại
+
+                                    );
+
+                                    $query = new WP_Query($args);
+                                    $total_pages = ceil($query->found_posts / $args['posts_per_page']);
+                                    global $wp_query;
+
+                                    $big = 999999999; // Need an unlikely integer
+
+                                    $paginate_links = paginate_links(array(
+                                        'base'    => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                                        'format'  => '?paged=%#%',
+                                        'current' => max(1, get_query_var('paged')),
+                                        'total'   => $total_pages,
+                                        'prev_text' => ('&laquo; Previous'),
+                                        'next_text' => ('Next &raquo;'),
+                                    ));
+
+                                    if ($paginate_links) {
+                                        echo '<div class="pagination">' . $paginate_links . '</div>';
+                                    } ?>
                                 </div>
                             </div>
                         </div>

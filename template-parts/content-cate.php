@@ -14,18 +14,18 @@
     </div>
     <ul class="list-group category-list col-12">
         <div class="row pl-5 pr-5">
-            <li class="list-group-item col-md-3 col-sm-4 col-6 icon-list">
-                <h3><a href="https://klingeltone.mobi/klingeltone-anders" title="Anders"><i class="fa-regular fa-bell"></i> Anders</a></h3>
-            </li>
-            <li class="list-group-item col-md-3 col-sm-4 col-6 icon-list">
-                <h3><a href="https://klingeltone.mobi/klingeltone-anders" title="Anders"><i class="fa-regular fa-bell"></i> Anders</a></h3>
-            </li>
-            <li class="list-group-item col-md-3 col-sm-4 col-6 icon-list">
-                <h3><a href="https://klingeltone.mobi/klingeltone-anders" title="Anders"><i class="fa-regular fa-bell"></i> Anders</a></h3>
-            </li>
-            <li class="list-group-item col-md-3 col-sm-4 col-6 icon-list">
-                <h3><a href="https://klingeltone.mobi/klingeltone-anders" title="Anders"><i class="fa-regular fa-bell"></i> Anders</a></h3>
-            </li>
+            <?php
+            $categories = get_categories();
 
+            foreach ($categories as $category) {
+            ?>
+                <li class="list-group-item col-md-3 col-sm-4 col-6 icon-list">
+                    <h3><a href="<?php echo esc_url(get_category_link($category->term_id)); ?>" title="<?php echo esc_attr($category->name); ?>">
+                            <i class="fa-regular fa-bell"></i> <?php echo esc_html($category->name); ?>
+                        </a></h3>
+                </li>
+            <?php
+            }
+            ?>
         </div>
     </ul>

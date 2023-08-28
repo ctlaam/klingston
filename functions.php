@@ -222,13 +222,38 @@ function html5_search_form($form)
 add_filter('get_search_form', 'html5_search_form');
 
 
-function increase_post_views() {
-    if (is_single()) {
-        $post_id = get_the_ID();
-        $current_views = get_post_meta($post_id, 'view', true);
-        $new_views = $current_views + 1;
-        update_post_meta($post_id, 'view', $new_views);
-    }
+function increase_post_views()
+{
+	if (is_single()) {
+		$post_id = get_the_ID();
+		$current_views = get_post_meta($post_id, 'view', true);
+		$new_views = $current_views + 1;
+		update_post_meta($post_id, 'view', $new_views);
+	}
 }
 
 add_action('wp', 'increase_post_views');
+
+
+add_action('wp_ajax_update_download', 'update_download');
+add_action('wp_ajax_nopriv_update_download', 'update_download');
+
+function update_download()
+{
+	if (isset($_POST['post_id'])) {
+		$post_id = $_POST['post_id'];
+		$download = get_post_meta($post_id, 'download', true);
+		$download++;
+
+		update_post_meta($post_id, 'download', $download);
+		echo $download;
+	}
+
+	wp_die();
+}
+
+function enqueue_jquery()
+{
+	wp_enqueue_script('jquery');
+}
+add_action('wp_enqueue_scripts', 'enqueue_jquery');

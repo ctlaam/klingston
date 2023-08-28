@@ -32,8 +32,10 @@
 			<div id="header">
 				<div class="container d-flex">
 					<div class="logo">
-						<img src="
-					https://klingeltone.mobi/wp-content/themes/klingeltone/assets/img/logo.png" height="60" alt="">
+						<a href="<?php echo esc_url(home_url()); ?>">
+							<img src="
+							https://klingeltone.mobi/wp-content/themes/klingeltone/assets/img/logo.png" height="60" alt="">
+						</a>
 					</div>
 					<nav class="navbar navbar-expand-lg navbar-light w-100 justify-content-end position-relative ">
 						<button class=" position-absolute navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,13 +44,13 @@
 						<div class="collapse navbar-collapse on-mobile " id="navbarSupportedContent">
 							<ul class="navbar-nav mr-auto">
 								<li class="nav-item ml-2 active">
-									<a class="nav-link h3" href="#">Neue Klingeltöne </a>
+									<a class="nav-link h3" href="https://klingston.de/neue-page/">Neue Klingeltöne </a>
 								</li>
 								<li class="nav-item ml-2 active">
-									<a class="nav-link h3" href="#">Beste Klingeltöne</a>
+									<a class="nav-link h3" href="https://klingston.de/beste/">Beste Klingeltöne</a>
 								</li>
 								<li class="nav-item ml-2 active">
-									<a class="nav-link h3" href="#">Top Klingeltöne </a>
+									<a class="nav-link h3" href="https://klingston.de/top-page/">Top Klingeltöne </a>
 								</li>
 							</ul>
 						</div>
