@@ -48,7 +48,7 @@ get_header();
 										</svg> <a href="/neue-klingeltone" class="color">Neue Klingeltöne</a>
 									</h2>
 								</div>
-								
+
 								<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 								<?php
 								$args = array(
@@ -103,7 +103,6 @@ get_header();
 								$args = array(
 									'post_type' => 'post', // Lấy bài viết
 									'posts_per_page' => 2, // Số bài viết hiển thị (2 bài viết)
-									'author_name' => 'admin1', // Tên tác giả là "admin"
 									'orderby' => 'date', // Sắp xếp theo thời gian ra mắt
 									'order' => 'DESC', // Sắp xếp giảm dần (mới nhất lên đầu)
 									'paged' => $paged, // Trang hiện tại
@@ -150,6 +149,7 @@ get_header();
 								<?php
 
 								$args = array(
+									'author_name' => 'admin1', // Tên tác giả là "admin"
 									'post_type' => 'post', // Lấy bài viết
 									'posts_per_page' => 2, // Số bài viết hiển thị trên mỗi trang
 									'paged' => $paged, // Trang hiện tại
